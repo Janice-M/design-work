@@ -16,6 +16,11 @@
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 					<strong>Oh snap!</strong> input less than six characters<a href="" class="alert-link">few things</a> up and try submitting again.
 				</div>
+
+			</div>
+			<div class="alert alert-success input-success">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<strong>Well done!</strong> Input Has a Length More Than 6 Characters!
 			</div>
 		</div>
 		<div class="row">
@@ -38,7 +43,7 @@
 
 		<div class="row mt20">
 			<div class="col-3">
-				<button id="submit-button"type="button" class="btn btn-success">submit</button>
+				<button id="submit-button" type="button" class="btn btn-success">submit</button>
 			</div>
 			<div class="col-9">
 				<div class="input-group input-group-lg">
@@ -72,14 +77,21 @@
 	<script src="js/jquery-3.4.1.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {})
-		$('div.input-error').hide();
-		$('#submit-button').click(function();{
+	$(document).ready(function(){
+					$('div.input-error').hide();
+					$('div.input-success').hide();
+					$('#submitButton').click(function(){
+							if($('#password_input').val().length > 6){
+									$('div.input-success').show();
+									$('div.input-error').hide();
+							}
+							else {
+									$('div.input-error').show();
+									$('div.input-success').hide();
+							}
 
-			if ($('#submit-button').val().legnth>6  ) {
-
-			}
-		});
+					});
+			});
 	</script>
 </body>
 
